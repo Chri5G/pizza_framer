@@ -20,6 +20,7 @@ const Home = () => {
     <motion.div className="home container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
+      transition={{ delay: 1.5, duration: 1.5 }} // delay for start of animation and time of animation
     >
       <motion.h2 animate={{ fontSize: 50, color: '#f22494', x: 100, y: -100 }}>
         Welcome to Pizza Joint
