@@ -4,9 +4,13 @@ import { motion }from 'framer-motion'
 
 const buttonVariants = {
   hover: {
-    scale: [1, 1.1, 1, 1.1, 1, 1.1, 1], // Keyframes on hover the button will increase and descrese in size
+    scale: 1.1, // Keyframes on hover the button will increase and descrese in size
     textShadow: '0px 0px 8px rgb(255,255,255)',
-    boxShadow: '0px 0px 8px rgb(255,255,255)'
+    boxShadow: '0px 0px 8px rgb(255,255,255)',
+    transition: {
+      duration: 0.3, // Time for transition
+      yoyo: Infinity //Repeat the key frames transition x times
+    }
   }
 }
 
