@@ -31,7 +31,7 @@ function App() {
     <>
       <Header />
       <Modal showModal={showModal} setShowModal={setShowModal}/>
-      <AnimatePresence exitBeforeEnter> {/* Makes sure any component that is exiting is complete before starting enter of next component */}
+      <AnimatePresence exitBeforeEnter onExitComplete={() => setShowModal(false)} mode='wait'> {/* Makes sure any component that is exiting is complete before starting enter of next component */}
         <Switch location={location} key={location.key}>
           <Route path="/base">
             <Base addBase={addBase} pizza={pizza} />

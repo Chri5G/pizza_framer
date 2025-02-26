@@ -7,6 +7,18 @@ const backdropVariants ={
   hidden: {opacity: 0}
 }
 
+const modalVariants ={
+  hidden: {
+    y: '-100vh',
+    opacity: 0,
+  },
+  visible: {
+    y: '200px',
+    opacity: 1,
+    transition: { delay: 0.5}
+  }
+}
+
 const Modal = ({ showModal, setShowModal }) => {
   return (
     <AnimatePresence exitBeforeEnter> {/* Exit animations completed first before starting enter animations*/}
@@ -15,7 +27,18 @@ const Modal = ({ showModal, setShowModal }) => {
         variants={backdropVariants}
         initial='hidden'
         animate='visible'
+        exit='hidden'
       >
+        <motion.div className="modal"
+          variants={modalVariants}
+          // initial='hidden' Dont need to define these b/c it sees the parent properties & uses that struturte
+          // animate='visible'
+          >
+          <p>Want to make another pizza?</p>
+          <Link to='/'>
+            <button>Start Again</button>
+          </Link>
+        </motion.div>
 
       </motion.div>
      )}

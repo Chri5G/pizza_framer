@@ -35,10 +35,11 @@ const childVariants = {
 const Order = ({ pizza, setShowModal }) => {
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setShowModal(true)
-    }, 5000)
-  }, [setShowModal]) // not going to rerun if value stays the same, only running once
+    }, 5000);
+    return () => clearTimeout(timer); // clear timer if user navigates away from page before modal loads
+  }, [setShowModal]); // not going to rerun if value stays the same, only running once
 
   return (
     <motion.div className="container order"
