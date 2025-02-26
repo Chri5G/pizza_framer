@@ -14,6 +14,10 @@ const containerVariants = { // Defining motion properties before hand
       type: 'spring', 
       delay: 0.5
     }
+  },
+  exit: {
+    x : '-100vh',
+    transition: {ease: 'easeInOut'}
   }
 }
 const nextVariants = {
@@ -49,6 +53,7 @@ const Base = ({ addBase, pizza }) => {
       variants={containerVariants}
       initial= 'hidden' // Picks up hidden element
       animate= 'visible' // Picks up visible element including transition
+      exit='exit'
       >
 
       <h3>Step 1: Choose Your Base</h3>

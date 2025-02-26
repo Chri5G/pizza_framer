@@ -14,21 +14,12 @@ const containerVariants = { // Defining motion properties before hand
       type: 'spring', 
       delay: 0.5
     }
-  }
-}
-const nextVariants = {
-  hidden: {
-    x: '-100vw',
   },
-  visible: {
-    x: 0,
-    transition: {
-      type: 'spring',
-      stiffness: 120
-    }
+  exit: {
+    x : '-100vh',
+    transition: {ease: 'easeInOut'}
   }
 }
-
 const buttonVariants = {
   hover: {
     scale: 1.1, // Keyframes on hover the button will increase and descrese in size
@@ -49,6 +40,7 @@ const Toppings = ({ addTopping, pizza }) => {
       variants={containerVariants}
       initial='hidden'
       animate='visible'
+      exit='exit'
     >  
       <h3>Step 2: Choose Toppings</h3>
       <ul>
