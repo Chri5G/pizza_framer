@@ -30,8 +30,12 @@ const pathVariants = {
 const Header = () => {
   return (
     <header>
-      <Link to="/">
-        <div className="logo">
+      {/* <Link to="/"> */}
+        <motion.div className="logo"
+          drag // make logo draggable
+          dragConstraints={{ left: 0, top: 0, right:0, bottom:0}} //logo will get dragged back to original position
+          dragElastic={1} //the higher the # the easier it is too drag
+        >
           <motion.svg className="pizza-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
             variants={svgVariants}
             initial='hidden'
@@ -48,8 +52,8 @@ const Header = () => {
               d="M50 30 L50 -10 C50 -10 90 -10 90 30 Z" /* Top right part */
             />
           </motion.svg>
-        </div>
-      </Link>
+        </motion.div>
+      {/* </Link> */}
       <motion.div className="title"
         initial={{ y: -250}} //Set start point of animation
         animate={{ y: -10}}
